@@ -19,5 +19,7 @@ Live Site: https://forge-recipegenerator.onrender.com/
 If you want to try it for yourself:
 
 git clone https://github.com/forge-ml/examples.recipegenerator
+
 npm i
+
 npm run dev
