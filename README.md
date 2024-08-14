@@ -10,7 +10,7 @@ This is a recipe generator application built with Forge. It allows users to uplo
 4. ChatGPT analyzes the image and generates a structured recipe response fitting the recipe.ts schema.
 5. The generated recipe is displayed on the screen.
 
-##Why use Forge?
+## Why use Forge?
 
 If you try making an app like this an issue you run into is that chatGPT can return any type of response. However, with forge you can define a schema and the response will be validated against that schema. This way you can be sure that the response you get back will always be in the correct format. This makes integrating chatGPT responses into your app seamless and effective.
 
@@ -18,8 +18,18 @@ Live Site: https://forge-recipegenerator.onrender.com/
 
 If you want to try it for yourself:
 
-git clone https://github.com/forge-ml/examples.recipegenerator
+Create .env file with your environment variables:
 
-npm i
+```
+FORGE_KEY=
+REGION=
+ACCESS_KEY_ID=
+SECRET_ACCESS_KEY=
+S3_BUCKET=
+```
 
-npm run dev
+`git clone https://github.com/forge-ml/examples.recipegenerator`
+
+`npm i`
+
+`npm run dev`
