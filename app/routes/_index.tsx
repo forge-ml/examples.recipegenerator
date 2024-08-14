@@ -122,7 +122,6 @@ export default function Index() {
 
   const handleGenerateRecipe = () => {
     setShowRecipe(true); // Show the recipe when the button is pressed
-    console.log("Generating recipe for:", localImageUrls[currentIndex]);
   };
 
   return (
@@ -157,12 +156,12 @@ export default function Index() {
 
 const RecipeCard = ({ recipe }) => {
   return (
-    <div className="bg-base-100 p-4 rounded-lg shadow-lg h-full flex flex-col">
-      <h3 className="text-2xl font-bold mb-2 text-primary">{recipe.title}</h3>
+    <div className="p-4 rounded-lg h-full flex flex-col">
+      <h3 className="text-xl font-bold mb-2 text-primary">{recipe.title}</h3> {/* Reduced text size */}
       <div className="flex flex-row gap-4 flex-grow">
         <div className="w-1/2 flex flex-col">
-          <h4 className="text-lg font-semibold mb-1 text-base-content">Ingredients</h4>
-          <ul className="text-md space-y-1 flex-grow overflow-auto">
+          <h4 className="text-md font-semibold mb-1 text-base-content">Ingredients</h4> {/* Reduced text size */}
+          <ul className="text-sm space-y-1 flex-grow overflow-auto"> {/* Reduced text size */}
             {recipe.ingredients.map((ingredient, index) => (
               <li key={index} className="flex items-center">
                 <span className="mr-1 text-primary">•</span>
@@ -173,16 +172,16 @@ const RecipeCard = ({ recipe }) => {
         </div>
         <div className="w-1/2 flex flex-col">
           <div className="bg-base-200 p-2 rounded-lg mb-2">
-            <h4 className="text-lg font-semibold mb-1 text-base-content">Recipe Details</h4>
-            <div className="text-md space-y-1">
+            <h4 className="text-md font-semibold mb-1 text-base-content">Recipe Details</h4> {/* Reduced text size */}
+            <div className="text-sm space-y-1"> {/* Reduced text size */}
               <p><span className="font-medium text-primary">Prep:</span> <span className="text-base-content">{recipe.preparationTime} min</span></p>
               <p><span className="font-medium text-primary">Cook:</span> <span className="text-base-content">{recipe.cookingTime} min</span></p>
               <p><span className="font-medium text-primary">Servings:</span> <span className="text-base-content">{recipe.servings}</span></p>
               <p><span className="font-medium text-primary">Cuisine:</span> <span className="text-base-content">{recipe.cuisine}</span></p>
             </div>
           </div>
-          <h4 className="text-lg font-semibold mb-1 text-base-content">Instructions</h4>
-          <ol className="text-md space-y-1 flex-grow overflow-auto">
+          <h4 className="text-md font-semibold mb-1 text-base-content">Instructions</h4> {/* Reduced text size */}
+          <ol className="text-sm space-y-1 flex-grow overflow-auto"> {/* Reduced text size */}
             {recipe.instructions.map((instruction, index) => (
               <li key={index} className="flex">
                 <span className="font-bold text-primary mr-1">{index + 1}.</span>
