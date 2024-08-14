@@ -6,7 +6,12 @@ import {
 import { Upload } from "@aws-sdk/lib-storage";
 import forge from "../../../forge/client";
 
-if (!process.env.ACCESS_KEY_ID || !process.env.SECRET_ACCESS_KEY) {
+if (
+  !process.env.ACCESS_KEY_ID ||
+  !process.env.SECRET_ACCESS_KEY ||
+  !process.env.REGION ||
+  !process.env.S3_BUCKET
+) {
   throw new Error("AWS credentials not found");
 }
 
@@ -49,15 +54,10 @@ export function getImageUrl(key: string) {
 
 export async function getRecipe(imageUrl: string) {
   try {
-    const response = await forge.recipe.queryImage(
-      {
-        prompt: "Describe the recipe of the image",
-        imageUrl: imageUrl,
-      },
-      {
-        cache: "Bust",
-      }
-    );
+    const response = await forge.recipe.queryImage({
+      prompt: "Describe the recipe of the image",
+      imageUrl: imageUrl,
+    });
     return response;
   } catch (error) {
     console.error("Error querying Forge:", error);
